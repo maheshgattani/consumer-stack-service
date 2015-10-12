@@ -29,8 +29,6 @@ trait MessageConsumer extends Actor {
 				val json = Json.parse(body)
 				val messageId = (json \ "id").asOpt[String].map(_.toLong)
 				val messageData = (json \ "data").asOpt[String].get
-				print(new String(body), messageId, messageData)
-				print("\n")
 				val newMessage = processMessage(messageId, messageData)
 				val ack = if (newMessage.isDefined) {
 					val outgoingRoutingKey = queueConfig.get("outgoing-routing-key")
