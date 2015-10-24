@@ -1,9 +1,10 @@
-# consumer-stack-service
+# Consumer Stack Service
 
 This service allows a stackable queue consumer framework.
 Requirements: Scala, Play, RabbitMQ, Mongo
 
 The components are
+
 1. REST API (To allow messages to be written to the system)
 2. A configurable number of queues (To act as part of consumer stack)
 3. An actor system for message producers (To ensure high performance in a scalable and predicatble manner)
@@ -11,9 +12,15 @@ The components are
 5. Mongo as the backend datastore (To save the messages and processed data)
 
 Config driven queue system
+
 1. The primary exchange name
 2. Number of actors in the actor system for the producers
-3. Queue consumers. You can add as many queue consumers as you want. For each consumer, configurable parameters are queue name, incoming routing key for the queue, sorting order (order in which to put this consumer in the consumer stack), consumer class name, number of actors in the actor system for this consumer.
+3. Queue consumers. You can add as many queue consumers as you want. For each consumer, configurable parameters are 
+   1. Queue name
+   2. Incoming routing key for the queue
+   3. Sorting order (order in which to put this consumer in the consumer stack)
+   4. Consumer class name
+   5. Number of actors in the actor system for this consumer
 4. RabbitMQ settings
 5. Mongo settings
 
