@@ -12,3 +12,5 @@ The REST API posts the message to the exchange which is bind to a queue based on
 Every Consumer will be backed by a number of Akka Actors as well. Number of actors is configurable per consumer.
 
 Better documentation to follow.
+
+![Alt text](/project/design.jpeg?raw=true "Optional Title")
